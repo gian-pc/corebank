@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: corebank-postgres
+    environment:
+      POSTGRES_DB: corebank_db
+      POSTGRES_USER: corebank
+      POSTGRES_PASSWORD: corebank123
+    ports:
+      - "5432:5432"
