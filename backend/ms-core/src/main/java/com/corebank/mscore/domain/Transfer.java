@@ -6,16 +6,20 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity
-public class Account {
+public class Transfer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String numeroCuenta;
-    private String titular;
-    private Double saldo;
-    private String moneda; // PEN - USD
-
+    private Long cuentaOrigenId;
+    private Long cuentaDestinoId;
+    private Double monto;
+    private String moneda;
+    private String estado; // pendiente - completada - fallida
+    private LocalDateTime fechaTransferencia;
 }
